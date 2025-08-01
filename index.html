@@ -1,124 +1,129 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AlashPlus — Первый Казахский Визуал</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlashPlus Visuals</title>
+  <link rel="icon" href="logo.png" type="image/png">
   <style>
-    html, body {
+    /* === ШРИФТЫ И СБРОС === */
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: #0f0f10;
-      color: #f5f5f5;
-      overflow-x: hidden;
-    }
-    .background {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%);
-      background-size: 400% 400%;
-      animation: fog 20s ease-in-out infinite;
-      z-index: -1;
-    }
-    @keyframes fog {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    header {
-      padding: 2rem;
-      text-align: center;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      color: white;
-    }
-    header img {
-      width: 120px;
-      border-radius: 20px;
-    }
-    h1 {
-      margin-top: 0.5rem;
-      font-size: 2rem;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .button {
-      background-color: #00c6ff;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .button:hover {
-      background-color: #0072ff;
-    }
-    .socials {
-      margin-top: 3rem;
-    }
-    .socials a {
-      margin: 0 10px;
-      font-size: 2rem;
-      text-decoration: none;
-      color: white;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #101010;
-    }
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }body {
+  color: white;
+  background: #0d0d0d;
+  overflow-x: hidden;
+}
+
+/* === АНИМИРОВАННЫЙ ТУМАН === */
+.fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.03), transparent 70%), url('fog.png');
+  background-size: cover;
+  animation: fogMove 60s linear infinite;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+@keyframes fogMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 2000px 0; }
+}
+
+/* === ХЭДЕР === */
+header {
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(45deg, #006eff, #00c3ff);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+header img {
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: 36px;
+  text-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* === КОНТЕНТ === */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #00c3ff;
+  text-shadow: 0 0 5px rgba(0,255,255,0.4);
+}
+
+.btn-download {
+  display: inline-block;
+  margin-top: 20px;
+  background: #00c3ff;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00c3ff;
+  transition: 0.3s;
+}
+
+.btn-download:hover {
+  transform: scale(1.05);
+  background: #00aaff;
+}
+
+footer {
+  background: #111;
+  text-align: center;
+  padding: 40px 10px;
+  font-size: 14px;
+}
+
+.social-icons img {
+  width: 32px;
+  margin: 0 10px;
+  vertical-align: middle;
+  filter: brightness(1.2);
+}
+
   </style>
 </head>
 <body>
-  <div class="background"></div>
-  <header>
-    <img src="logo.png" alt="AlashPlus Logo" />
-    <h1>AlashPlus Visual Client</h1>
-    <p>ПЕРВЫЙ КАЗАХСКИЙ ВИЗУАЛ МОД НА MINECRAFT 1.16.5+</p>
-  </header>
-
-  <section>
-    <h2>О Проекте</h2>
-    <p>AlashPlus — это первый казахстанский Minecraft-визуал мод, созданный специально для игроков СНГ и KZ. Он вдохновлён лучшими клиентами, такими как Delta, и предлагает уникальный визуальный стиль, адаптацию под слабые и мощные ПК, и множество функций.</p>
-  </section>
-
-  <section>
-    <h2>Скачать</h2>
-    <p>Бесплатная версия доступна по кнопке ниже. В будущем будет PRO-версия с эксклюзивными возможностями и эмоциями!</p>
-    <a class="button" href="AlashPlus-Visual.jar">Скачать Free Версию</a>
-  </section>
-
-  <section>
-    <h2>О Сервере</h2>
-    <p>Мы также запускаем свой сервер: <strong>mc.alash.pw</strong>. Это казахстанская анархия, где будут встроены визуалы, кастомный лаунчер и локализация.</p>
-  </section>
-
-  <section>
-    <h2>Будущее</h2>
-    <p>В будущем появится <strong>Alash Plus Launcher</strong>, который будет менять правила игры для казахстанских серверов и визуалов. Он будет включать:</p>
-    <ul>
-      <li>Казахскую локализацию</li>
-      <li>Интеграция с Telegram и Discord</li>
-      <li>Встроенные визуалы и кастомизация</li>
-    </ul>
-  </section>
-
-  <section class="socials">
-    <h2>Связь</h2>
-    <a href="https://discord.gg/dsc.alash" target="_blank">🔵</a>
-    <a href="https://t.me/herobrineqz" target="_blank">📢</a>
-  </section>
-
-  <footer>
-    <p>© 2025 AlashPlus. Сделано в Казахстане. Автор: herobrine / berikovv</p>
+  <div class="fog"></div>  <header>
+    <img src="logo.png" alt="AlashPlus Visuals">
+    <h1>AlashPlus Visuals — первый казахский визуал клиент</h1>
+  </header>  <section class="section">
+    <h2>О проекте</h2>
+    <p>AlashPlus Visuals — это кастомный визуальный мод на Minecraft Forge 1.16.5+, разработанный для слабых, средних и мощных ПК. Это первый казахский визуал клиент, созданный для комьюнити.</p>
+    <p>В будущем появится: лаунчер AlashPlus Launcher, донат-сайт, поддержка версий 1.8.9 – 1.20+, профессиональные эффекты и эмоции, а также про-версия с эксклюзивными функциями.</p>
+    <a class="btn-download" href="AlashPlusClient.jar">Скачать клиент</a>
+  </section>  <section class="section">
+    <h2>Наши ссылки</h2>
+    <p>Присоединяйтесь к сообществу, предлагайте идеи и будьте частью Alash!</p>
+    <div class="social-icons">
+      <a href="https://discord.gg/dsc.alash" target="_blank"><img src="discord.png" alt="Discord"></a>
+      <a href="https://t.me/herobrineqz" target="_blank"><img src="telegram.png" alt="Telegram"></a>
+    </div>
+  </section>  <footer>
+    <p>&copy; 2025 Alash Project. Founder: herobrine | Dev: berikovv</p>
+    <p>Поддержка: mc.alash.pw | Версия: Forge 1.16.5+</p>
   </footer>
 </body>
 </html>
