@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlashPlus - Kazakh Visual Client</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+    body {
+      background: black;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 4rem;
+      background: linear-gradient(90deg, #00ffff, #0055ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: none;
+      background: #00ffff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #0055ff;
+      color: white;
+    }
+    canvas#fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fog"></canvas>
+  <header>
+    <h1>ALASH+</h1>
+    <p>Kazakh Visual Client for Minecraft</p>
+    <button class="btn">Download</button>
+  </header>
+  <script>
+    const canvas = document.getElementById('fog');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const particles = [];
+    const count = 50;
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 80 + 50,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+        opacity: Math.random() * 0.1 + 0.05
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      for (let p of particles) {
+        ctx.beginPath();
+        const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+        grd.addColorStop(0, `rgba(200,200,255,${p.opacity})`);
+        grd.addColorStop(1, 'transparent');
+        ctx.fillStyle = grd;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > width) p.dx *= -1;
+        if (p.y < 0 || p.y > height) p.dy *= -1;
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
