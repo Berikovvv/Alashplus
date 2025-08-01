@@ -1,112 +1,126 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AlashPlus Client</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlashPlus</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
     body {
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background: linear-gradient(#0f0f0f, #1b1b1b);
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#0f0f0f, #1a1a1a);
       color: white;
       overflow-x: hidden;
-      animation: fog 20s ease-in-out infinite;
     }
-
-    @keyframes fog {
-      0% { background-position: 0 0; }
-      50% { background-position: 100px 100px; }
-      100% { background-position: 0 0; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #121212;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      text-align: center;
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #00ffaa;
     }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      color: #00d9ff;
-    }
-
-    .desc {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
-
-    .download {
-      background: #00d9ff;
-      color: black;
-      padding: 14px 32px;
-      font-weight: 600;
-      border: none;
-      border-radius: 12px;
+    #lang-toggle {
+      background: transparent;
+      border: 1px solid #00ffaa;
+      color: #00ffaa;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
       cursor: pointer;
-      font-size: 16px;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #00ffaa;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #00ffaa;
+      color: black;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
       transition: 0.3s;
     }
-
-    .download:hover {
-      background: #0ff;
+    a.button:hover {
+      background-color: #00cc88;
     }
-
-    .info {
-      text-align: left;
-      margin-top: 60px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 24px;
-      border-radius: 14px;
-      line-height: 1.8;
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #121212;
+      margin-top: 4rem;
     }
-
-    .socials {
-      margin-top: 40px;
-    }
-
-    .socials a {
+    .socials img {
+      width: 32px;
       margin: 0 10px;
-      color: #00d9ff;
-      font-size: 28px;
-      text-decoration: none;
+      vertical-align: middle;
     }
   </style>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>AlashPlus Client</h1>
-    <p class="desc">Казахский визуал мод для Minecraft Forge</p>
-    <a href="AlashPlus-1.0.jar" download>
-      <button class="download">Скачать клиент</button>
-    </a>
+  <header>
+    <h1>AlashPlus</h1>
+    <button id="lang-toggle">Қазақша</button>
+  </header>  <main>
+    <h2 id="title">Официальный сайт AlashPlus</h2>
+    <p id="about">Первый казахский визуал для Minecraft, созданный с душой. Поддержка версий 1.16.5+ и в будущем — лаунчер AlashPlus Launcher с уникальным функционалом для казахского анархия сервера.</p>
+    <a id="download" class="button" href="/files/alashplus-client.jar" download>Скачать клиент</a><h3>Сервер</h3>
+<p>IP: <strong>mc.alash.pw</strong></p>
+<p>Поддержка: Forge 1.16.5+</p>
 
-    <div class="info">
-      <h2>🧠 Что такое AlashPlus?</h2>
-      <p><strong>AlashPlus</strong> — это первый в своём роде <strong>казахский визуал мод</strong> для <strong>Minecraft Forge</strong>, созданный для тех, кто ценит стиль, производительность и родной язык.</p>
-      <ul>
-        <li>🔹 Совместим с <strong>Minecraft 1.16.5</strong> (Forge)</li>
-        <li>🌫️ Динамический туман, ESP, радар, компас, анимации рук</li>
-        <li>🔀 Переключение режимов: слабый, средний, мощный ПК</li>
-        <li>🌐 Языки: <strong>Русский / Қазақша</strong></li>
-        <li>🤡 Мемные вставки для кайфа</li>
-      </ul>
-      <p>👑 <strong>Создатель:</strong> berikovv<br />
-         🧱 <strong>Основатель:</strong> herobrine<br />
-         🎮 <strong>Версия:</strong> AlashPlus v1.0</p>
-      <p>🚀 <strong>Скоро:</strong> AlashPlus Launcher — полноценный лаунчер с автообновлением, конфигами и установщиком модов</p>
-    </div>
+<h3>Будущее</h3>
+<ul>
+  <li>Лаунчер AlashPlus Launcher</li>
+  <li>Продвинутая кастомизация</li>
+  <li>Платная версия с эмоциями и расширенным функционалом</li>
+  <li>Донат-сайт — в разработке</li>
+</ul>
 
-    <div class="socials">
-      <a href="https://discord.gg/dsc.alash" target="_blank"><i class="fab fa-discord"></i></a>
-      <a href="https://t.me/herobrineqz" target="_blank"><i class="fab fa-telegram"></i></a>
-    </div>
-  </div>
-</body>
+<h3>Связаться с нами</h3>
+<div class="socials">
+  <a href="https://discord.gg/dsc.alash" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord"></a>
+  <a href="https://t.me/herobrineqz" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+</div>
+
+  </main>  <footer>
+    &copy; 2025 AlashPlus. Разработано berikovv & herobrine.
+  </footer>  <script>
+    const langToggle = document.getElementById('lang-toggle');
+    let currentLang = 'ru';
+
+    const translations = {
+      ru: {
+        title: "Официальный сайт AlashPlus",
+        download: "Скачать клиент",
+        about: "Первый казахский визуал для Minecraft, созданный с душой. Поддержка версий 1.16.5+ и в будущем — лаунчер AlashPlus Launcher с уникальным функционалом для казахского анархия сервера."
+      },
+      kz: {
+        title: "AlashPlus ресми сайты",
+        download: "Клиентті жүктеу",
+        about: "Minecraft үшін жанмен жасалған алғашқы қазақша визуал. 1.16.5+ нұсқаларын қолдайды және болашақта ерекше мүмкіндіктері бар AlashPlus Launcher іске қосылады."
+      }
+    };
+
+    function updateLanguage(lang) {
+      document.getElementById('title').innerText = translations[lang].title;
+      document.getElementById('download').innerText = translations[lang].download;
+      document.getElementById('about').innerText = translations[lang].about;
+    }
+
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'ru' ? 'kz' : 'ru';
+      langToggle.innerText = currentLang === 'ru' ? 'Қазақша' : 'Русский';
+      updateLanguage(currentLang);
+    });
+  </script></body>
 </html>
