@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlashPlus Client</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(#0f0f0f, #1b1b1b);
+      color: white;
+      overflow-x: hidden;
+      animation: fog 20s ease-in-out infinite;
+    }
+
+    @keyframes fog {
+      0% { background-position: 0 0; }
+      50% { background-position: 100px 100px; }
+      100% { background-position: 0 0; }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #00d9ff;
+    }
+
+    .desc {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .download {
+      background: #00d9ff;
+      color: black;
+      padding: 14px 32px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .download:hover {
+      background: #0ff;
+    }
+
+    .info {
+      text-align: left;
+      margin-top: 60px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 24px;
+      border-radius: 14px;
+      line-height: 1.8;
+    }
+
+    .socials {
+      margin-top: 40px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #00d9ff;
+      font-size: 28px;
+      text-decoration: none;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>AlashPlus Client</h1>
+    <p class="desc">Казахский визуал мод для Minecraft Forge</p>
+    <a href="AlashPlus-1.0.jar" download>
+      <button class="download">Скачать клиент</button>
+    </a>
+
+    <div class="info">
+      <h2>🧠 Что такое AlashPlus?</h2>
+      <p><strong>AlashPlus</strong> — это первый в своём роде <strong>казахский визуал мод</strong> для <strong>Minecraft Forge</strong>, созданный для тех, кто ценит стиль, производительность и родной язык.</p>
+      <ul>
+        <li>🔹 Совместим с <strong>Minecraft 1.16.5</strong> (Forge)</li>
+        <li>🌫️ Динамический туман, ESP, радар, компас, анимации рук</li>
+        <li>🔀 Переключение режимов: слабый, средний, мощный ПК</li>
+        <li>🌐 Языки: <strong>Русский / Қазақша</strong></li>
+        <li>🤡 Мемные вставки для кайфа</li>
+      </ul>
+      <p>👑 <strong>Создатель:</strong> berikovv<br />
+         🧱 <strong>Основатель:</strong> herobrine<br />
+         🎮 <strong>Версия:</strong> AlashPlus v1.0</p>
+      <p>🚀 <strong>Скоро:</strong> AlashPlus Launcher — полноценный лаунчер с автообновлением, конфигами и установщиком модов</p>
+    </div>
+
+    <div class="socials">
+      <a href="https://discord.gg/dsc.alash" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://t.me/herobrineqz" target="_blank"><i class="fab fa-telegram"></i></a>
+    </div>
+  </div>
+</body>
+</html>
